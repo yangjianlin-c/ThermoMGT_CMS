@@ -23,7 +23,7 @@ const generatePermalink = async ({
   const minute = String(publishDate.getMinutes()).padStart(2, '0');
   const second = String(publishDate.getSeconds()).padStart(2, '0');
 
-  const permalink = POST_PERMALINK_PATTERN.replace('%slug%', slug)
+const permalink = `/post/${POST_PERMALINK_PATTERN.replace('%slug%', slug)
     .replace('%id%', id)
     .replace('%category%', category || '')
     .replace('%year%', year)
@@ -31,7 +31,8 @@ const generatePermalink = async ({
     .replace('%day%', day)
     .replace('%hour%', hour)
     .replace('%minute%', minute)
-    .replace('%second%', second);
+    .replace('%second%', second)}`;
+
 
   return permalink
     .split('/')
